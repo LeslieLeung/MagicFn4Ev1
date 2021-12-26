@@ -8,7 +8,7 @@ AutoHotKey script that utilize your (probably) useless CapsLock as Magic Fn, ava
   - `CapsLock` + `[` -> `Home`
   - `CapsLock` + `]` -> `End`
   - `CapsLock` + `;` -> `PgUp`
-  - `CapsLock` + `'` -> 'PgDn`
+  - `CapsLock` + `'` -> `PgDn`
   - `CapsLock` + `esc` -> `` ` ``
 - May your wrists rest in peace (x
 
