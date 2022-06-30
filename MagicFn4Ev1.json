@@ -2,35 +2,40 @@
     "title": "MagicFn4Ev1",
     "rules": [
         {
+          "description": "Caps for MagicFn (must enable, otherwise none of below works)",
+          "manipulators":[
+            {
+              "type": "basic",
+              "from": {
+                "key_code": "caps_lock",
+                "modifiers": {
+                  "optional": [
+                    "any"
+                  ]
+                }
+             },
+              "to": [
+                {
+                  "set_variable": {
+                    "name": "caps_lock pressed",
+                    "value": 1
+                  }
+                }
+              ],
+              "to_after_key_up": [
+                {
+                  "set_variable": {
+                    "name": "caps_lock pressed",
+                    "value": 0
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
             "description": "Caps + WASD for arrows",
             "manipulators": [
-                {
-                    "type": "basic",
-                    "from": {
-                      "key_code": "caps_lock",
-                      "modifiers": {
-                        "optional": [
-                          "any"
-                        ]
-                      }
-                   },
-                    "to": [
-                      {
-                        "set_variable": {
-                          "name": "caps_lock pressed",
-                          "value": 1
-                        }
-                      }
-                    ],
-                    "to_after_key_up": [
-                      {
-                        "set_variable": {
-                          "name": "caps_lock pressed",
-                          "value": 0
-                        }
-                      }
-                    ]
-                  },
                   {
                     "type": "basic",
                     "from": {
@@ -457,7 +462,35 @@
                   ]
                 }
           ]
-      },
+        },
+        {
+          "description": "Caps + esc for `",
+          "manipulators": [
+            {
+              "type": "basic",
+              "from": {
+                "key_code": "escape",
+                "modifiers": {
+                  "optional": [
+                    "any"
+                  ]
+                }
+              },
+              "to": [
+                {
+                  "key_code": "grave_accent_and_tilde"
+                }
+              ],
+              "conditions": [
+                {
+                  "type": "variable_if",
+                  "name": "caps_lock pressed",
+                  "value": 1
+                }
+              ]
+            }
+          ]
+        },
         {
             "description": "Left Shift for switch input methods",
             "manipulators": [
